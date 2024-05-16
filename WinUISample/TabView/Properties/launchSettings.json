@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "TabView (Package)": {
+      "commandName": "MsixPackage"
+    },
+    "TabView (Unpackaged)": {
+      "commandName": "Project"
+    }
+  }
+}

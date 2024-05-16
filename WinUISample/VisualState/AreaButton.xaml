@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:VisualState">
+
+    <Style TargetType="local:AreaButton">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="local:AreaButton">
+                    <Button x:Name="StateButton" Width="100" Height="40">
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="AreaStates">
+                                <VisualState x:Name="Left">
+                                    <VisualState.Setters>
+                                        <Setter Target="StateButton.(Content)" Value="Left"/>
+                                    </VisualState.Setters>
+                                </VisualState>
+                                <VisualState x:Name="Middle">
+                                    <VisualState.Setters>
+                                        <Setter Target="StateButton.(Content)" Value="Middle"/>
+                                    </VisualState.Setters>
+                                </VisualState>
+                                <VisualState x:Name="Right">
+                                    <VisualState.Setters>
+                                        <Setter Target="StateButton.(Content)" Value="Right"/>
+                                    </VisualState.Setters>
+                                </VisualState>
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                    </Button>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+</ResourceDictionary>

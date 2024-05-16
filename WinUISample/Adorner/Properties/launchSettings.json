@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "Adorner (Package)": {
+      "commandName": "MsixPackage"
+    },
+    "Adorner (Unpackaged)": {
+      "commandName": "Project"
+    }
+  }
+}

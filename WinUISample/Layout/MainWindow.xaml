@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Window
+    x:Class="Layout.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Layout"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    xmlns:local1="using:Layout.Controls" xmlns:models="using:Layout.Models"
+    mc:Ignorable="d">
+
+    <local1:DockControl>
+        <models:RootDock>
+            <models:Document x:Name="Document1" Title="Program.cs">
+                <TextBlock Text="{Binding Title}"/>
+            </models:Document>
+            <models:Document x:Name="Document2" Title="App.axaml">
+                <TextBlock Text="{Binding Title}"/>
+            </models:Document>
+        </models:RootDock>
+    </local1:DockControl>
+</Window>

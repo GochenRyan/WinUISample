@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "TemplatePart (Package)": {
+      "commandName": "MsixPackage"
+    },
+    "TemplatePart (Unpackaged)": {
+      "commandName": "Project"
+    }
+  }
+}
