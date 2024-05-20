@@ -16,6 +16,7 @@
     <None Remove="Controls\DockControl.xaml" />
     <None Remove="Controls\DockTemplate.xaml" />
     <None Remove="Controls\DocumentControl.xaml" />
+    <None Remove="Controls\DocumentDockControl.xaml" />
     <None Remove="Controls\RootDockControl.xaml" />
   </ItemGroup>
 
@@ -30,8 +31,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.WindowsAppSDK" Version="1.4.230913002" />
-    <PackageReference Include="Microsoft.Windows.SDK.BuildTools" Version="10.0.22621.755" />
+    <PackageReference Include="CommunityToolkit.WinUI.Controls.Primitives" Version="8.0.240109" />
+    <PackageReference Include="Microsoft.WindowsAppSDK" Version="1.5.240428000" />
+    <PackageReference Include="Microsoft.Windows.SDK.BuildTools" Version="10.0.22621.3233" />
     <Manifest Include="$(ApplicationManifest)" />
   </ItemGroup>
 
@@ -42,6 +44,11 @@
   -->
   <ItemGroup Condition="'$(DisableMsixProjectCapabilityAddedByProject)'!='true' and '$(EnableMsixTooling)'=='true'">
     <ProjectCapability Include="Msix" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="Controls\DocumentDockControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Page Update="Controls\DocumentControl.xaml">

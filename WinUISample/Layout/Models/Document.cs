@@ -4,7 +4,7 @@ using Microsoft.UI.Xaml.Markup;
 namespace Layout.Models
 {
     [ContentProperty(Name = "Content")]
-    public class Document : DockableBase
+    public class Document : DockableBase, IDocument
     {
         DependencyProperty ContentProperty = DependencyProperty.Register(
             nameof(Content),
@@ -12,10 +12,10 @@ namespace Layout.Models
             typeof(Document),
             new PropertyMetadata(default));
 
-        public object Content 
-        { 
-            get => GetValue(ContentProperty); 
-            set => SetValue(ContentProperty, value); 
+        public object Content
+        {
+            get => GetValue(ContentProperty);
+            set => SetValue(ContentProperty, value);
         }
     }
 }

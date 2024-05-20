@@ -5,8 +5,16 @@
     xmlns:local="using:Layout.Controls" xmlns:models="using:Layout.Models">
 
     <DataTemplate x:Key="RootDockTemplate">
-        <local:RootDockControl Content="{Binding VisibleDockables, Mode=TwoWay}"/>
+        <local:RootDockControl ItemsSource="{Binding VisibleDockables, Mode=TwoWay}"/>
     </DataTemplate>
+
+    <DataTemplate x:Key="DocumentDockTemplate">
+        <local:DocumentDockControl Content="{Binding VisibleDockables, Mode=TwoWay}"/>
+    </DataTemplate>
+
+    <!--<DataTemplate x:Key="DocumentTemplate">
+        <local:DocumentControl />
+    </DataTemplate>-->
 
     <!--<local:DockTemplateSelector 
         x:Key="DockControlSelector"

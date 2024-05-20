@@ -1,3 +1,4 @@
+using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
 
 // To learn more about WinUI, the WinUI project structure,
@@ -5,26 +6,30 @@ using Microsoft.UI.Xaml.Controls;
 
 namespace Layout.Controls
 {
-    public sealed class RootDockControl : ContentControl
+    public sealed class RootDockControl : ItemsControl
     {
         public RootDockControl()
         {
             this.DefaultStyleKey = typeof(RootDockControl);
         }
 
-        protected override void OnContentChanged(object oldContent, object newContent)
+        protected override DependencyObject GetContainerForItemOverride()
         {
-            base.OnContentChanged(oldContent, newContent);
+            return base.GetContainerForItemOverride();
         }
 
-        protected override void OnContentTemplateSelectorChanged(DataTemplateSelector oldContentTemplateSelector, DataTemplateSelector newContentTemplateSelector)
+        protected override bool IsItemItsOwnContainerOverride(object item)
         {
-            base.OnContentTemplateSelectorChanged(oldContentTemplateSelector, newContentTemplateSelector);
+            return base.IsItemItsOwnContainerOverride(item);
+        }
+        protected override void PrepareContainerForItemOverride(DependencyObject element, object item)
+        {
+            base.PrepareContainerForItemOverride(element, item);
         }
 
-        protected override void OnApplyTemplate()
+        protected override void OnItemsChanged(object e)
         {
-            base.OnApplyTemplate();
+            base.OnItemsChanged(e);
         }
     }
 }

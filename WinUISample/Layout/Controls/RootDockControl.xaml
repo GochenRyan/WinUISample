@@ -2,28 +2,22 @@
 <ResourceDictionary
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="using:Layout.Controls" xmlns:models="using:Layout.Models">
+    xmlns:local="using:Layout.Controls" 
+    xmlns:controls="using:CommunityToolkit.WinUI.Controls">
 
     <Style TargetType="local:RootDockControl">
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="local:RootDockControl">
-                    <StackPanel>
-                        <TextBlock Text="RootDockControl Title"></TextBlock>
-                        <ContentPresenter 
-                            Content="{TemplateBinding Content}"
-                            ContentTemplate="{TemplateBinding ContentTemplate}"
-                            Margin="{TemplateBinding Padding}"
-                            ContentTransitions="{TemplateBinding ContentTransitions}"
-                            HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
-                            VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
-                    </StackPanel>
+                    <controls:DockPanel>
+                        <ItemsPresenter/>
+                    </controls:DockPanel>
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
-        <Setter Property="ContentTemplateSelector">
+        <Setter Property="ItemTemplateSelector">
             <Setter.Value>
-                <local:DockTemplateSelector RootDockTemplate="{StaticResource RootDockTemplate}"/>
+                <local:RootTemplateSelector DocumentDockTemplate="{StaticResource DocumentDockTemplate}"/>
             </Setter.Value>
         </Setter>
     </Style>

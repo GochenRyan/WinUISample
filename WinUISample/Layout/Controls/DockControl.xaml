@@ -8,16 +8,13 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="local:DockControl">
-                    <StackPanel>
-                        <TextBlock Text="DockControl Title"></TextBlock>
-                        <ContentPresenter 
+                    <ContentPresenter 
                             Content="{TemplateBinding Content}"
                             ContentTemplate="{TemplateBinding ContentTemplate}"
                             Margin="{TemplateBinding Padding}"
                             ContentTransitions="{TemplateBinding ContentTransitions}"
                             HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
                             VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
-                    </StackPanel>
                 </ControlTemplate>
             </Setter.Value>
         </Setter>

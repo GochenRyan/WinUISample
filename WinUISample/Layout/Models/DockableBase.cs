@@ -1,5 +1,4 @@
 ﻿using Microsoft.UI.Xaml;
-using Microsoft.UI.Xaml.Markup;
 
 namespace Layout.Models
 {
@@ -11,10 +10,34 @@ namespace Layout.Models
             typeof(DockableBase),
             new PropertyMetadata(string.Empty));
 
-        public string Title 
-        { 
-            get => (string)GetValue(TitleProperty); 
-            set => SetValue(TitleProperty, value); 
+        DependencyProperty FactoryProperty = DependencyProperty.Register(
+            nameof(Factory),
+            typeof(IFactory),
+            typeof(DockableBase),
+            new PropertyMetadata(null));
+
+        DependencyProperty OwnerProperty = DependencyProperty.Register(
+            nameof(Owner),
+            typeof(IDockable),
+            typeof(DockableBase),
+            new PropertyMetadata(null));
+
+        public string Title
+        {
+            get => (string)GetValue(TitleProperty);
+            set => SetValue(TitleProperty, value);
+        }
+
+        public IFactory? Factory
+        {
+            get => (IFactory)GetValue(FactoryProperty);
+            set => SetValue(FactoryProperty, value);
+        }
+
+        public IDockable Owner
+        {
+            get => (IDockable)GetValue(OwnerProperty);
+            set => SetValue(OwnerProperty, value);
         }
     }
 }

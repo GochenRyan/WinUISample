@@ -2,14 +2,18 @@
 <ResourceDictionary
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="using:Layout.Controls">
+    xmlns:local="using:Layout.Controls" xmlns:models="using:Layout.Models">
 
     <Style TargetType="local:DocumentControl">
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="local:DocumentControl">
-                    <TabView>
-                        
+                    <TabView TabItemsSource="{Binding VisibleDockables}">
+                        <TabView.TabItemTemplate>
+                            <DataTemplate>
+                                <TabViewItem Header="{Binding Title}" Content="{Binding Title}" />
+                            </DataTemplate>
+                        </TabView.TabItemTemplate>
                     </TabView>
                 </ControlTemplate>
             </Setter.Value>

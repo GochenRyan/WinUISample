@@ -6,19 +6,7 @@
     <ResourceDictionary.MergedDictionaries>
         <ResourceDictionary Source="ms-appx:///Controls/DockControl.xaml" />
         <ResourceDictionary Source="ms-appx:///Controls/RootDockControl.xaml" />
+        <ResourceDictionary Source="ms-appx:///Controls/DocumentControl.xaml" />
+        <ResourceDictionary Source="ms-appx:///Controls/DocumentDockControl.xaml" />
     </ResourceDictionary.MergedDictionaries>
-
-    <Style TargetType="local2:DocumentControl" xmlns:local2="using:Layout.Controls">
-        <Setter Property="Template">
-            <Setter.Value>
-                <ControlTemplate TargetType="local2:DocumentControl">
-                    <Border
-                        Background="{TemplateBinding Background}"
-                        BorderBrush="{TemplateBinding BorderBrush}"
-                        BorderThickness="{TemplateBinding BorderThickness}">
-                    </Border>
-                </ControlTemplate>
-            </Setter.Value>
-        </Setter>
-    </Style>
 </ResourceDictionary>

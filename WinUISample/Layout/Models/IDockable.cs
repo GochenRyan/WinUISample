@@ -2,5 +2,6 @@
 {
     public interface IDockable
     {
+        IDockable? Owner { get; set; }
     }
 }
