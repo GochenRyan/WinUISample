@@ -6,13 +6,13 @@ namespace Layout.Controls
 {
     public class DocumentDockSelector : DataTemplateSelector
     {
-        public DataTemplate DocumentTemplate { get; set; }
+        public DataTemplate DocumentDockTemplate { get; set; }
 
         protected override DataTemplate SelectTemplateCore(object item, DependencyObject container)
         {
-            if (item is IDocument)
+            if (item is IDocumentDock)
             {
-                return DocumentTemplate;
+                return DocumentDockTemplate;
             }
             else
             {

@@ -7,13 +7,13 @@ namespace Layout.Models
     //[ContentProperty(Name = "VisibleDockables")]
     public class DockBase : DockableBase, IDock
     {
-        public static DependencyProperty VisibleDockablesProperty = DependencyProperty.Register(
+        public DependencyProperty VisibleDockablesProperty = DependencyProperty.Register(
             nameof(VisibleDockables),
             typeof(IList<IDockable>),
             typeof(DockBase),
             new PropertyMetadata(new List<IDockable>(), new PropertyChangedCallback(OnPropertyChanged)));
 
-        public static DependencyProperty ActiveDockableProperty = DependencyProperty.Register(
+        public DependencyProperty ActiveDockableProperty = DependencyProperty.Register(
             nameof(ActiveDockable),
             typeof(IDockable),
             typeof(DockBase),
