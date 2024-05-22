@@ -11,18 +11,10 @@
 
     <local1:DockControl>
         <models:RootDock>
-            <models:RootDock.VisibleDockables>
-                <models:DocumentDock>
-                    <models:DocumentDock.VisibleDockables>
-                        <models:Document x:Name="Document1" Title="Program.cs">
-                            <TextBlock Text="{Binding Title}"/>
-                        </models:Document>
-                        <!--<models:Document x:Name="Document2" Title="App.axaml">
-                            <TextBlock Text="{Binding Title}"/>
-                        </models:Document>-->
-                    </models:DocumentDock.VisibleDockables>
-                </models:DocumentDock>
-            </models:RootDock.VisibleDockables>
+            <models:DocumentDock>
+                <models:Document x:Name="Document1" Title="Program.cs" />
+                <models:Document x:Name="Document2" Title="App.axaml" />
+            </models:DocumentDock>
         </models:RootDock>
     </local1:DockControl>
 </Window>

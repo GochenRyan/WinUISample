@@ -6,7 +6,7 @@ namespace Layout.Models
     [ContentProperty(Name = "Content")]
     public class Document : DockableBase, IDocument
     {
-        DependencyProperty ContentProperty = DependencyProperty.Register(
+        static DependencyProperty ContentProperty = DependencyProperty.Register(
             nameof(Content),
             typeof(object),
             typeof(Document),

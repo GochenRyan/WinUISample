@@ -4,19 +4,19 @@ namespace Layout.Models
 {
     public abstract class DockableBase : DependencyObject, IDockable
     {
-        DependencyProperty TitleProperty = DependencyProperty.Register(
+        public static DependencyProperty TitleProperty = DependencyProperty.Register(
             nameof(Title),
             typeof(string),
             typeof(DockableBase),
             new PropertyMetadata(string.Empty));
 
-        DependencyProperty FactoryProperty = DependencyProperty.Register(
+        public static DependencyProperty FactoryProperty = DependencyProperty.Register(
             nameof(Factory),
             typeof(IFactory),
             typeof(DockableBase),
             new PropertyMetadata(null));
 
-        DependencyProperty OwnerProperty = DependencyProperty.Register(
+        public static DependencyProperty OwnerProperty = DependencyProperty.Register(
             nameof(Owner),
             typeof(IDockable),
             typeof(DockableBase),
