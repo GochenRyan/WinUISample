@@ -7,7 +7,7 @@ namespace Layout.Models
     [ContentProperty(Name = "VisibleDockables")]
     public class RootDock : DockBase, IRootDock
     {
-        public static DependencyProperty VisibleDockablesProperty = DependencyProperty.Register(
+        public DependencyProperty VisibleDockablesProperty = DependencyProperty.Register(
             nameof(VisibleDockables),
             typeof(IList<IDockable>),
             typeof(RootDock),
