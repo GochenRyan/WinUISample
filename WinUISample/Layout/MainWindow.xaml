@@ -12,8 +12,12 @@
     <local1:DockControl>
         <models:RootDock>
             <models:DocumentDock>
-                <models:Document x:Name="Document1" Title="Program.cs" />
-                <models:Document x:Name="Document2" Title="App.axaml" />
+                <models:Document x:Name="Document1" Title="Program.cs">
+                    <Page Height="600" Width="800" Background="AliceBlue"/>
+                </models:Document>
+                <models:Document x:Name="Document2" Title="App.axaml">
+                    <Page Height="600" Width="800" Background="AntiqueWhite"/>
+                </models:Document>
             </models:DocumentDock>
         </models:RootDock>
     </local1:DockControl>

@@ -11,7 +11,7 @@
                     <TabView TabItemsSource="{Binding VisibleDockables}">
                         <TabView.TabItemTemplate>
                             <DataTemplate>
-                                <TabViewItem Header="{Binding Title}" Content="{Binding Title}" />
+                                <TabViewItem Header="{Binding Title}" Content="{Binding Content}" />
                             </DataTemplate>
                         </TabView.TabItemTemplate>
                     </TabView>
