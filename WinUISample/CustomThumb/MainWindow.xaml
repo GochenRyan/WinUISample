@@ -10,8 +10,8 @@
 
     <StackPanel Orientation="Horizontal" VerticalAlignment="Top">
         <Grid Name="grid1" Background="AliceBlue" Width="200" Height="400"/>
-        <Thumb Name="thumb"  Width="10" Height="400" Canvas.Left="20" 
-               DragStarted="Thumb_DragStarted" DragDelta="Thumb_DragDelta" DragCompleted="Thumb_DragCompleted"/>
+        <local:CustomThumb Name="thumb"  Width="10" Height="400"
+               ThumbDragStarted="Thumb_DragStarted" ThumbDragDelta="Thumb_DragDelta" ThumbDragCompleted="Thumb_DragCompleted"/>
         <Grid Name="grid2" Background="AntiqueWhite" Width="200" Height="400"/>
     </StackPanel>
 </Window>
