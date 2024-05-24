@@ -13,7 +13,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VisualState", "VisualState\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Layout", "Layout\Layout.csproj", "{5071B143-79C1-4B21-BA72-87C711C57A3D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TabViewSample", "TabViewSample\TabViewSample.csproj", "{3060C1D7-4A5E-4E68-B7C6-C338E4E0AB93}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TabViewSample", "TabViewSample\TabViewSample.csproj", "{3060C1D7-4A5E-4E68-B7C6-C338E4E0AB93}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomThumb", "CustomThumb\CustomThumb.csproj", "{F8ECFBA5-6481-43F9-A0C5-1D062CAE2E80}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -133,6 +135,24 @@ Global
 		{3060C1D7-4A5E-4E68-B7C6-C338E4E0AB93}.Release|x86.ActiveCfg = Release|x86
 		{3060C1D7-4A5E-4E68-B7C6-C338E4E0AB93}.Release|x86.Build.0 = Release|x86
 		{3060C1D7-4A5E-4E68-B7C6-C338E4E0AB93}.Release|x86.Deploy.0 = Release|x86
+		{F8ECFBA5-6481-43F9-A0C5-1D062CAE2E80}.Debug|ARM64.ActiveCfg = Debug|ARM64
+		{F8ECFBA5-6481-43F9-A0C5-1D062CAE2E80}.Debug|ARM64.Build.0 = Debug|ARM64
+		{F8ECFBA5-6481-43F9-A0C5-1D062CAE2E80}.Debug|ARM64.Deploy.0 = Debug|ARM64
+		{F8ECFBA5-6481-43F9-A0C5-1D062CAE2E80}.Debug|x64.ActiveCfg = Debug|x64
+		{F8ECFBA5-6481-43F9-A0C5-1D062CAE2E80}.Debug|x64.Build.0 = Debug|x64
+		{F8ECFBA5-6481-43F9-A0C5-1D062CAE2E80}.Debug|x64.Deploy.0 = Debug|x64
+		{F8ECFBA5-6481-43F9-A0C5-1D062CAE2E80}.Debug|x86.ActiveCfg = Debug|x86
+		{F8ECFBA5-6481-43F9-A0C5-1D062CAE2E80}.Debug|x86.Build.0 = Debug|x86
+		{F8ECFBA5-6481-43F9-A0C5-1D062CAE2E80}.Debug|x86.Deploy.0 = Debug|x86
+		{F8ECFBA5-6481-43F9-A0C5-1D062CAE2E80}.Release|ARM64.ActiveCfg = Release|ARM64
+		{F8ECFBA5-6481-43F9-A0C5-1D062CAE2E80}.Release|ARM64.Build.0 = Release|ARM64
+		{F8ECFBA5-6481-43F9-A0C5-1D062CAE2E80}.Release|ARM64.Deploy.0 = Release|ARM64
+		{F8ECFBA5-6481-43F9-A0C5-1D062CAE2E80}.Release|x64.ActiveCfg = Release|x64
+		{F8ECFBA5-6481-43F9-A0C5-1D062CAE2E80}.Release|x64.Build.0 = Release|x64
+		{F8ECFBA5-6481-43F9-A0C5-1D062CAE2E80}.Release|x64.Deploy.0 = Release|x64
+		{F8ECFBA5-6481-43F9-A0C5-1D062CAE2E80}.Release|x86.ActiveCfg = Release|x86
+		{F8ECFBA5-6481-43F9-A0C5-1D062CAE2E80}.Release|x86.Build.0 = Release|x86
+		{F8ECFBA5-6481-43F9-A0C5-1D062CAE2E80}.Release|x86.Deploy.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

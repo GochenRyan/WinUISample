@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "CustomThumb (Package)": {
+      "commandName": "MsixPackage"
+    },
+    "CustomThumb (Unpackaged)": {
+      "commandName": "Project"
+    }
+  }
+}

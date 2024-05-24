@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Window
+    x:Class="CustomThumb.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:CustomThumb"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <StackPanel Orientation="Horizontal" VerticalAlignment="Top">
+        <Grid Name="grid1" Background="AliceBlue" Width="200" Height="400"/>
+        <Thumb Name="thumb"  Width="10" Height="400" Canvas.Left="20" 
+               DragStarted="Thumb_DragStarted" DragDelta="Thumb_DragDelta" DragCompleted="Thumb_DragCompleted"/>
+        <Grid Name="grid2" Background="AntiqueWhite" Width="200" Height="400"/>
+    </StackPanel>
+</Window>
