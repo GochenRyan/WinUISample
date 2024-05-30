@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "GridSplitterSample (Package)": {
+      "commandName": "MsixPackage"
+    },
+    "GridSplitterSample (Unpackaged)": {
+      "commandName": "Project"
+    }
+  }
+}

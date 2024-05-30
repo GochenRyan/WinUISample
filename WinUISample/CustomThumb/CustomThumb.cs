@@ -1,3 +1,4 @@
+using Microsoft.UI.Input;
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
 using Microsoft.UI.Xaml.Controls.Primitives;
@@ -14,6 +15,12 @@ namespace CustomThumb
         public CustomThumb()
         {
             this.DefaultStyleKey = typeof(CustomThumb);
+            Loaded += CustomThumb_Loaded;
+        }
+
+        private void CustomThumb_Loaded(object sender, RoutedEventArgs e)
+        {
+            ProtectedCursor = InputSystemCursor.Create(InputSystemCursorShape.Hand);
         }
 
         protected override void OnApplyTemplate()

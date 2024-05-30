@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:BindToAncestor"
+    xmlns:ui="using:CommunityToolkit.WinUI.UI">
+
+    <Style TargetType="local:CustomControl">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="local:CustomControl">
+                    <StackPanel>
+                        <StackPanel>
+                            <ContentPresenter x:Name="Part_ContentControl"
+                                              ui:FrameworkElementExtensions.AncestorType="Grid">
+                                <TextBlock x:Name="Part_TB" Text="{Binding (ui:FrameworkElementExtensions.Ancestor).Name, ElementName=Part_ContentControl}"/>
+                            </ContentPresenter>
+                        </StackPanel>
+                    </StackPanel>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

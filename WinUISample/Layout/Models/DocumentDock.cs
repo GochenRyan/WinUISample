@@ -14,18 +14,13 @@ namespace Layout.Models
             typeof(DocumentDock),
             new PropertyMetadata(new List<IDockable>()));
 
-        public IList<IDockable> VisibleDockables
+        public override IList<IDockable> VisibleDockables
         {
             get => (IList<IDockable>)GetValue(VisibleDockablesProperty);
             set
             {
                 SetValue(VisibleDockablesProperty, value);
             }
-        }
-
-        public override IList<IDockable> GetVisibleDockables()
-        {
-            return VisibleDockables;
         }
     }
 }

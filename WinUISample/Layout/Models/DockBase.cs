@@ -23,9 +23,6 @@ namespace Layout.Models
             }
         }
 
-        public virtual IList<IDockable> GetVisibleDockables()
-        {
-            return new List<IDockable>();
-        }
+        public virtual IList<IDockable> VisibleDockables { get; set; }
     }
 }

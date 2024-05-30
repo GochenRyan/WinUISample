@@ -6,6 +6,6 @@ namespace Layout.Models
     {
         IDockable? ActiveDockable { get; set; }
 
-        IList<IDockable>? GetVisibleDockables();
+        IList<IDockable> VisibleDockables { get; set; }
     }
 }

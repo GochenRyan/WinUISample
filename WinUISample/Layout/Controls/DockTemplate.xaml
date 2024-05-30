@@ -5,11 +5,11 @@
     xmlns:local="using:Layout.Controls" xmlns:models="using:Layout.Models">
 
     <DataTemplate x:Key="RootDockTemplate">
-        <local:RootDockControl ItemsSource="{Binding VisibleDockables, Mode=TwoWay}"/>
+        <local:RootDockControl ItemsSource="{Binding VisibleDockables, Mode=OneWay}"/>
     </DataTemplate>
 
     <DataTemplate x:Key="DocumentDockTemplate">
-        <local:DocumentDockControl Content="{Binding VisibleDockables, Mode=TwoWay}"/>
+        <local:DocumentDockControl Content="{Binding VisibleDockables, Mode=OneWay}"/>
     </DataTemplate>
 
     <!--<DataTemplate x:Key="DocumentTemplate">

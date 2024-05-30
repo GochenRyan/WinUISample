@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "BindToAncestor (Package)": {
+      "commandName": "MsixPackage"
+    },
+    "BindToAncestor (Unpackaged)": {
+      "commandName": "Project"
+    }
+  }
+}
