@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Window
+    x:Class="librarySample.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:librarySample"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    xmlns:controls="using:Layout.Controls" 
+    xmlns:models="using:Layout.Models"
+    mc:Ignorable="d">
+
+    <controls:DockControl>
+        <models:RootDock>
+            <models:DocumentDock>
+                <models:Document x:Name="Document1" Title="Program1.cs">
+                    <Page Height="300" Width="400" Background="AliceBlue"/>
+                </models:Document>
+                <models:Document x:Name="Document2" Title="App1.axaml">
+                    <Page Height="300" Width="400" Background="AntiqueWhite"/>
+                </models:Document>
+            </models:DocumentDock>
+
+            <models:DocumentDock>
+                <models:Document x:Name="Document3" Title="Program2.cs">
+                    <Page Height="300" Width="400" Background="AliceBlue"/>
+                </models:Document>
+                <models:Document x:Name="Document4" Title="App2.axaml">
+                    <Page Height="300" Width="400" Background="AntiqueWhite"/>
+                </models:Document>
+            </models:DocumentDock>
+        </models:RootDock>
+    </controls:DockControl>
+</Window>

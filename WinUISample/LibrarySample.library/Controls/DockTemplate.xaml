@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Layout.Controls" xmlns:models="using:Layout.Models">
+
+    <!--<DataTemplate x:Key="RootDockTemplate">
+        <local:RootDockControl ItemsSource="{Binding VisibleDockables, Mode=OneWay}"/>
+    </DataTemplate>
+
+    <DataTemplate x:Key="DocumentDockTemplate">
+        <local:DocumentDockControl Content="{Binding VisibleDockables, Mode=OneWay}"/>
+    </DataTemplate>-->
+
+    <!--<DataTemplate x:Key="DocumentTemplate">
+        <local:DocumentControl />
+    </DataTemplate>-->
+
+    <!--<local:DockTemplateSelector 
+        x:Key="DockControlSelector"
+        RootDockTemplate="{StaticResource RootDockTemplate}"/>-->
+
+</ResourceDictionary>

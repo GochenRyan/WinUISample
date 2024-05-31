@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Layout.Controls">
+
+    <Style TargetType="local:DockControl">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="local:DockControl">
+                    <ContentPresenter 
+                            Content="{TemplateBinding Content}"
+                            ContentTemplate="{TemplateBinding ContentTemplate}"
+                            Margin="{TemplateBinding Padding}"
+                            ContentTransitions="{TemplateBinding ContentTransitions}"
+                            HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                            VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="ContentTemplateSelector">
+            <Setter.Value>
+                <local:DockTemplateSelector>
+                    <local:DockTemplateSelector.RootDockTemplate>
+                        <DataTemplate>
+                            <local:RootDockControl ItemsSource="{Binding VisibleDockables, Mode=OneWay}"/>
+                        </DataTemplate>
+                    </local:DockTemplateSelector.RootDockTemplate>
+                </local:DockTemplateSelector>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+</ResourceDictionary>

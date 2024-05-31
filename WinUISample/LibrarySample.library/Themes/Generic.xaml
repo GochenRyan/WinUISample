@@ -1,0 +1,14 @@
+<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <!--Must write 'LibrarySample.library'-->
+    <!--Cannot use 'DataTemplate' as resource in class library-->
+    
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="ms-appx:///LibrarySample.library/Controls/DockControl.xaml" />
+        <ResourceDictionary Source="ms-appx:///LibrarySample.library/Controls/RootDockControl.xaml" />
+        <ResourceDictionary Source="ms-appx:///LibrarySample.library/Controls/DocumentControl.xaml" />
+        <ResourceDictionary Source="ms-appx:///LibrarySample.library/Controls/DocumentDockControl.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+</ResourceDictionary>
