@@ -14,6 +14,7 @@
         <MenuBar>
             <MenuBarItem Title="File">
                 <MenuFlyoutItem Text="New" Command="{x:Bind UpdateButtonTextCommand}" CommandParameter="{x:Bind newBtnText.Text, Mode=OneWay}"/>
+                <MenuFlyoutItem Text="New" Command="{x:Bind UpdateButtonText2Command}"/>
             </MenuBarItem>
         </MenuBar>
     </StackPanel>

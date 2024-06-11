@@ -27,6 +27,7 @@ namespace Command
         {
             this.InitializeComponent();
             UpdateButtonTextCommand = new(UpdateButtonText);
+            UpdateButtonText2Command = new(UpdateButtonText2);
         }
 
         private void myButton_Click(object sender, RoutedEventArgs e)
@@ -40,6 +41,12 @@ namespace Command
             myButton.Content = text;
         }
 
+        public void UpdateButtonText2()
+        {
+            myButton.Content = "1111111";
+        }
+
         public RelayCommand UpdateButtonTextCommand { get; private set; }
+        public RelayCommand UpdateButtonText2Command { get; private set; }
     }
 }

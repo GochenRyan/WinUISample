@@ -64,7 +64,14 @@ namespace Command
         /// </param>
         public void Execute(object parameter)
         {
-            _execute.DynamicInvoke(parameter);
+            if (parameter == null)
+            {
+                _execute.DynamicInvoke();
+            }
+            else
+            {
+                _execute.DynamicInvoke(parameter);
+            }
         }
 
         /// <summary>
