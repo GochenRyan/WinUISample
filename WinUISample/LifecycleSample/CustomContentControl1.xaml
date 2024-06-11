@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:LifecycleSample">
+
+    <Style TargetType="local:CustomContentControl1">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="local:CustomContentControl1">
+                    <ContentPresenter/>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="ContentTemplateSelector">
+            <Setter.Value>
+                <local:ContentControl1Selector>
+                    <local:ContentControl1Selector.Model1Template>
+                        <DataTemplate>
+                            <local:ModelControl1/>
+                        </DataTemplate>
+                    </local:ContentControl1Selector.Model1Template>
+                </local:ContentControl1Selector>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+</ResourceDictionary>

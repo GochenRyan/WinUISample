@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Window
+    x:Class="LifecycleSample.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:LifecycleSample"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:controls="using:CommunityToolkit.WinUI.Controls"
+    mc:Ignorable="d">
+
+    <!--<local:CustomPanel1>
+        <local:CustomContentControl1>
+            <local:Model1 Text="1111111"/>
+        </local:CustomContentControl1>
+        <local:CustomContentControl1>
+            <local:Model1 Text="2222222"/>
+        </local:CustomContentControl1>
+        <local:CustomContentControl1>
+            <local:Model1 Text="3333333"/>
+        </local:CustomContentControl1>
+    </local:CustomPanel1>-->
+    <!--<local:CustomPanel1>
+        <TextBlock Text="Outer"/>
+        <local:CustomItemsControl1>
+            <local:Model2 Text="2222222"/>
+            <local:Model1 Text="1111111"/>
+            <local:Model1 Text="3333333"/>
+        </local:CustomItemsControl1>
+    </local:CustomPanel1>-->
+    <StackPanel Background="AliceBlue" Orientation="Horizontal" Spacing="2">
+        <TextBlock Text="11111" />
+        <TextBlock Text="22222" />
+    </StackPanel>
+</Window>
