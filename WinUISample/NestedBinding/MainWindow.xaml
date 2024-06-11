@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Window
+    x:Class="NestedBinding.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:NestedBinding"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+        <local:CustomItemsControl1>
+            <local:Model1 x:Name="Mode11111" Text="11111"/>
+            <local:ItemsModel1 x:Name="ItemsModel1">
+                <local:Model1 x:Name="Mode22222" Text="22222"/>
+                <local:Model1 x:Name="Mode33333" Text="33333"/>
+                <local:ItemsModel1 x:Name="ItemsModel2">
+                    <local:Model1 x:Name="Mode44444" Text="44444"/>
+                </local:ItemsModel1>
+            </local:ItemsModel1>
+            <local:Model1 x:Name="Mode55555" Text="55555"/>
+        </local:CustomItemsControl1>
+    </StackPanel>
+</Window>

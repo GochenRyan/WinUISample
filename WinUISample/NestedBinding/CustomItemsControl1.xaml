@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:NestedBinding">
+
+    <Style TargetType="local:CustomItemsControl1">
+        <Setter Property="ItemsPanel">
+            <Setter.Value>
+                <ItemsPanelTemplate>
+                    <StackPanel />
+                </ItemsPanelTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="ItemTemplateSelector">
+            <Setter.Value>
+                <local:ItemsControl1Selector>
+                    <local:ItemsControl1Selector.Model1Template>
+                        <DataTemplate>
+                            <local:ModelControl1/>
+                        </DataTemplate>
+                    </local:ItemsControl1Selector.Model1Template>
+                    <local:ItemsControl1Selector.Items1Template>
+                        <DataTemplate>
+                            <local:CustomItemsControl1 ItemsSource="{Binding ItemModes, Mode=OneWay}"/>
+                        </DataTemplate>
+                    </local:ItemsControl1Selector.Items1Template>
+                </local:ItemsControl1Selector>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+</ResourceDictionary>

@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "NestedBinding (Package)": {
+      "commandName": "MsixPackage"
+    },
+    "NestedBinding (Unpackaged)": {
+      "commandName": "Project"
+    }
+  }
+}
