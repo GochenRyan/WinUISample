@@ -1,7 +1,8 @@
 {
   "profiles": {
     "NestedBinding (Package)": {
-      "commandName": "MsixPackage"
+      "commandName": "MsixPackage",
+      "nativeDebugging": true
     },
     "NestedBinding (Unpackaged)": {
       "commandName": "Project"

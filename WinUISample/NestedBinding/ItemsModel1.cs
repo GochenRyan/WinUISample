@@ -14,7 +14,7 @@ namespace NestedBinding
     {
         public static readonly DependencyProperty ItemModesProperty = DependencyProperty.Register(
             nameof(ItemModes),
-            typeof(string),
+            typeof(IList<IItem>),
             typeof(ItemsModel1),
             new PropertyMetadata(new List<IItem>()));
 
