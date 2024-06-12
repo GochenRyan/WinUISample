@@ -4,6 +4,14 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:NestedBinding">
 
+    <DataTemplate x:Key="DT_CustomItemsControl1">
+        <local:CustomItemsControl1 ItemsSource="{Binding ItemModes, Mode=OneWay}"/>
+    </DataTemplate>
+
+    <DataTemplate x:Key="DT_ModelControl1">
+        <local:ModelControl1/>
+    </DataTemplate>
+
     <Style TargetType="local:CustomItemsControl1">
         <Setter Property="ItemsPanel">
             <Setter.Value>
@@ -12,7 +20,7 @@
                 </ItemsPanelTemplate>
             </Setter.Value>
         </Setter>
-        <Setter Property="ItemTemplateSelector">
+        <!--<Setter Property="ItemTemplateSelector">
             <Setter.Value>
                 <local:ItemsControl1Selector>
                     <local:ItemsControl1Selector.Model1Template>
@@ -26,6 +34,12 @@
                         </DataTemplate>
                     </local:ItemsControl1Selector.Items1Template>
                 </local:ItemsControl1Selector>
+            </Setter.Value>
+        </Setter>-->
+        <Setter Property="ItemTemplateSelector">
+            <Setter.Value>
+                <local:ItemsControl1Selector Model1Template="{StaticResource DT_ModelControl1}"
+                                             Items1Template="{StaticResource DT_CustomItemsControl1}"/>
             </Setter.Value>
         </Setter>
     </Style>
