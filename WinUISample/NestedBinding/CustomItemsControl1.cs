@@ -19,6 +19,15 @@ namespace NestedBinding
         public CustomItemsControl1()
         {
             this.DefaultStyleKey = typeof(CustomItemsControl1);
+            DataContextChanged += CustomItemsControl1_DataContextChanged;
+        }
+
+        private void CustomItemsControl1_DataContextChanged(FrameworkElement sender, DataContextChangedEventArgs args)
+        {
+           if (DataContext is ItemsModel1 itemsModel1)
+            {
+                ItemsSource = itemsModel1.ItemModes;
+            }
         }
 
         protected override void OnItemsChanged(object e)

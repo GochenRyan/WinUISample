@@ -5,7 +5,7 @@
     xmlns:local="using:NestedBinding">
 
     <DataTemplate x:Key="DT_CustomItemsControl1">
-        <local:CustomItemsControl1 ItemsSource="{Binding ItemModes, Mode=OneWay}"/>
+        <local:CustomItemsControl1/>
     </DataTemplate>
 
     <DataTemplate x:Key="DT_ModelControl1">
