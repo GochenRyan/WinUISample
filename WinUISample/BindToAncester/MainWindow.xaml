@@ -14,7 +14,9 @@
             <StackPanel>
                 <TextBlock ui:FrameworkElementExtensions.AncestorType="Grid"
                            Text="{Binding (ui:FrameworkElementExtensions.Ancestor).Name, RelativeSource={RelativeSource Self}}"/>
-                <local:CustomControl />
+                <local:CustomControl>
+                    <local:Model1/>
+                </local:CustomControl>
             </StackPanel>
         </Grid>
     </StackPanel>

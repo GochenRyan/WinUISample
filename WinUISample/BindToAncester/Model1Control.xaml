@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:ui="using:CommunityToolkit.WinUI.UI" 
+    xmlns:local="using:BindToAncestor">
+
+    <Style TargetType="local:Model1Control">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="local:Model1Control">
+                    <TextBlock ui:FrameworkElementExtensions.AncestorType="Grid"
+                               Text="{Binding (ui:FrameworkElementExtensions.Ancestor).Name, RelativeSource={RelativeSource Mode=Self}}"/>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+</ResourceDictionary>

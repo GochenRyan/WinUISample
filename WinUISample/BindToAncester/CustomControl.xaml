@@ -20,5 +20,16 @@
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
+        <Setter Property="ContentTemplateSelector">
+            <Setter.Value>
+                <local:CustomSelector>
+                    <local:CustomSelector.Model1>
+                        <DataTemplate>
+                            <local:Model1Control/>
+                        </DataTemplate>
+                    </local:CustomSelector.Model1>
+                </local:CustomSelector>
+            </Setter.Value>
+        </Setter>
     </Style>
 </ResourceDictionary>
