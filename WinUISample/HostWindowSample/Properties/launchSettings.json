@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "HostWindowSample (Package)": {
+      "commandName": "MsixPackage"
+    },
+    "HostWindowSample (Unpackaged)": {
+      "commandName": "Project"
+    }
+  }
+}

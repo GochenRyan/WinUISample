@@ -21,15 +21,17 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GridSplitterSample", "GridS
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BindToAncestor", "BindToAncester\BindToAncestor.csproj", "{3209EAF9-9448-4DDC-AE2A-1B0AD674E059}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AssetSample", "AssetSample\AssetSample.csproj", "{C104AB6A-B5BE-42E3-BDEE-16FEFDAB7976}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AssetSample", "AssetSample\AssetSample.csproj", "{C104AB6A-B5BE-42E3-BDEE-16FEFDAB7976}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibrarySample.library", "LibrarySample.library\LibrarySample.library.csproj", "{403BDCBA-94D7-40C8-8A04-53E6390739DA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LibrarySample.library", "LibrarySample.library\LibrarySample.library.csproj", "{403BDCBA-94D7-40C8-8A04-53E6390739DA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "librarySample", "librarySample\librarySample.csproj", "{2CD9C246-0FE6-4973-B4E3-49AFB1A58072}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "librarySample", "librarySample\librarySample.csproj", "{2CD9C246-0FE6-4973-B4E3-49AFB1A58072}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LifecycleSample", "LifecycleSample\LifecycleSample.csproj", "{FEBF8F6A-6FD2-45C6-8AC2-A05856D7718F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LifecycleSample", "LifecycleSample\LifecycleSample.csproj", "{FEBF8F6A-6FD2-45C6-8AC2-A05856D7718F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NestedBinding", "NestedBinding\NestedBinding.csproj", "{15B670F7-38C1-41F2-BCC9-540D0975037F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NestedBinding", "NestedBinding\NestedBinding.csproj", "{15B670F7-38C1-41F2-BCC9-540D0975037F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HostWindowSample", "HostWindowSample\HostWindowSample.csproj", "{928BF237-E0B0-441A-A3E9-AC398C31BF5A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -353,6 +355,30 @@ Global
 		{15B670F7-38C1-41F2-BCC9-540D0975037F}.Release|x86.ActiveCfg = Release|x86
 		{15B670F7-38C1-41F2-BCC9-540D0975037F}.Release|x86.Build.0 = Release|x86
 		{15B670F7-38C1-41F2-BCC9-540D0975037F}.Release|x86.Deploy.0 = Release|x86
+		{928BF237-E0B0-441A-A3E9-AC398C31BF5A}.Debug|Any CPU.ActiveCfg = Debug|x64
+		{928BF237-E0B0-441A-A3E9-AC398C31BF5A}.Debug|Any CPU.Build.0 = Debug|x64
+		{928BF237-E0B0-441A-A3E9-AC398C31BF5A}.Debug|Any CPU.Deploy.0 = Debug|x64
+		{928BF237-E0B0-441A-A3E9-AC398C31BF5A}.Debug|ARM64.ActiveCfg = Debug|ARM64
+		{928BF237-E0B0-441A-A3E9-AC398C31BF5A}.Debug|ARM64.Build.0 = Debug|ARM64
+		{928BF237-E0B0-441A-A3E9-AC398C31BF5A}.Debug|ARM64.Deploy.0 = Debug|ARM64
+		{928BF237-E0B0-441A-A3E9-AC398C31BF5A}.Debug|x64.ActiveCfg = Debug|x64
+		{928BF237-E0B0-441A-A3E9-AC398C31BF5A}.Debug|x64.Build.0 = Debug|x64
+		{928BF237-E0B0-441A-A3E9-AC398C31BF5A}.Debug|x64.Deploy.0 = Debug|x64
+		{928BF237-E0B0-441A-A3E9-AC398C31BF5A}.Debug|x86.ActiveCfg = Debug|x86
+		{928BF237-E0B0-441A-A3E9-AC398C31BF5A}.Debug|x86.Build.0 = Debug|x86
+		{928BF237-E0B0-441A-A3E9-AC398C31BF5A}.Debug|x86.Deploy.0 = Debug|x86
+		{928BF237-E0B0-441A-A3E9-AC398C31BF5A}.Release|Any CPU.ActiveCfg = Release|x64
+		{928BF237-E0B0-441A-A3E9-AC398C31BF5A}.Release|Any CPU.Build.0 = Release|x64
+		{928BF237-E0B0-441A-A3E9-AC398C31BF5A}.Release|Any CPU.Deploy.0 = Release|x64
+		{928BF237-E0B0-441A-A3E9-AC398C31BF5A}.Release|ARM64.ActiveCfg = Release|ARM64
+		{928BF237-E0B0-441A-A3E9-AC398C31BF5A}.Release|ARM64.Build.0 = Release|ARM64
+		{928BF237-E0B0-441A-A3E9-AC398C31BF5A}.Release|ARM64.Deploy.0 = Release|ARM64
+		{928BF237-E0B0-441A-A3E9-AC398C31BF5A}.Release|x64.ActiveCfg = Release|x64
+		{928BF237-E0B0-441A-A3E9-AC398C31BF5A}.Release|x64.Build.0 = Release|x64
+		{928BF237-E0B0-441A-A3E9-AC398C31BF5A}.Release|x64.Deploy.0 = Release|x64
+		{928BF237-E0B0-441A-A3E9-AC398C31BF5A}.Release|x86.ActiveCfg = Release|x86
+		{928BF237-E0B0-441A-A3E9-AC398C31BF5A}.Release|x86.Build.0 = Release|x86
+		{928BF237-E0B0-441A-A3E9-AC398C31BF5A}.Release|x86.Deploy.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
