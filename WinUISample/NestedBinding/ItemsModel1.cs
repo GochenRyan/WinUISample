@@ -12,11 +12,16 @@ namespace NestedBinding
     [ContentProperty(Name= "ItemModes")]
     public class ItemsModel1 : DependencyObject, IItem, IEquatable<ItemsModel1>
     {
-        public readonly DependencyProperty ItemModesProperty = DependencyProperty.Register(
+        public ItemsModel1() 
+        {
+            ItemModes = new List<IItem>();
+        }
+
+        public static readonly DependencyProperty ItemModesProperty = DependencyProperty.Register(
             nameof(ItemModes),
             typeof(IList<IItem>),
             typeof(ItemsModel1),
-            new PropertyMetadata(new List<IItem>()));
+            new PropertyMetadata(null));
 
         public IList<IItem> ItemModes
         {
