@@ -5,13 +5,18 @@ namespace Layout.Models
 {
     public class DocumentDock : DockBase, IDocumentDock
     {
-        public DependencyProperty VisibleDockablesProperty = DependencyProperty.Register(
+        public DocumentDock() : base()
+        {
+            VisibleDockables = new List<IDockable>();
+        }
+
+        public static readonly DependencyProperty VisibleDockablesProperty = DependencyProperty.Register(
             nameof(VisibleDockables),
             typeof(IList<IDockable>),
             typeof(DocumentDock),
-            new PropertyMetadata(new List<IDockable>()));
+            new PropertyMetadata(null));
 
-        public virtual IList<IDockable> VisibleDockables
+        public override IList<IDockable> VisibleDockables
         {
             get => (IList<IDockable>)GetValue(VisibleDockablesProperty);
             set
