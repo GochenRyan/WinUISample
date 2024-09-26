@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "Hotkeys (Package)": {
+      "commandName": "MsixPackage"
+    },
+    "Hotkeys (Unpackaged)": {
+      "commandName": "Project"
+    }
+  }
+}

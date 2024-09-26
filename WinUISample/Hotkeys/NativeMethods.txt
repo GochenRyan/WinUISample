@@ -1,0 +1,4 @@
+RegisterHotKey
+SetWindowLongPtr
+CallWindowProc
+GetActiveWindow
