@@ -1,4 +1,6 @@
 using Microsoft.UI.Xaml;
+using Microsoft.UI.Xaml.Controls;
+using Microsoft.UI.Xaml.Input;
 using System;
 using System.Runtime.InteropServices;
 using Windows.Win32;
@@ -13,42 +15,60 @@ namespace Hotkeys
     /// </summary>
     public sealed partial class MainWindow : Window
     {
-        private const uint WM_HOTKEY = 0x0312;
         private const uint OemPeriod = 0xBE;
-        private Windows.Win32.UI.WindowsAndMessaging.WNDPROC origPrc;
-        private Windows.Win32.UI.WindowsAndMessaging.WNDPROC hotKeyPrc;
 
-
-        private Windows.Win32.Foundation.LRESULT HotKeyPrc(Windows.Win32.Foundation.HWND hwnd,
-            uint uMsg,
-            Windows.Win32.Foundation.WPARAM wParam,
-            Windows.Win32.Foundation.LPARAM lParam)
+        private bool IsCurrentlyInputtingText()
         {
-            if (uMsg == WM_HOTKEY)
+            var focusedElement = FocusManager.GetFocusedElement(this.Content.XamlRoot);
+            if (focusedElement is Control control)
             {
-                if (PInvoke.GetActiveWindow() == hwnd)
+                if (control is TextBox ||
+                    control is AutoSuggestBox ||
+                    control is NumberBox ||
+                    control is PasswordBox ||
+                    control is RichEditBox)
                 {
-                    CountText.Text = "Hot key pressed: " + (++m_count);
-                    return (Windows.Win32.Foundation.LRESULT)IntPtr.Zero;
+                    return true;
                 }
             }
 
-            return PInvoke.CallWindowProc(origPrc, hwnd, uMsg, wParam, lParam);
+            return false;
         }
 
         public MainWindow()
         {
             this.InitializeComponent();
+            var hm = GlobalHotkeyManager.Instance;
+            hm.OnHotkeyPressed += Hm_OnHotkeyPressed;
+            hm.RegisterWindow(this);
+            hm.RegisterHotkey(this, 1, Windows.Win32.UI.Input.KeyboardAndMouse.HOT_KEY_MODIFIERS.MOD_WIN | Windows.Win32.UI.Input.KeyboardAndMouse.HOT_KEY_MODIFIERS.MOD_CONTROL, OemPeriod);
+        }
 
-            hotKeyPrc = HotKeyPrc;
-            Windows.Win32.Foundation.HWND hwnd = new Windows.Win32.Foundation.HWND(WinRT.Interop.WindowNative.GetWindowHandle(this).ToInt32());
+        private void Hm_OnHotkeyPressed(Windows.Win32.Foundation.HWND hwnd, uint uMsg, Windows.Win32.Foundation.WPARAM wParam, Windows.Win32.Foundation.LPARAM lParam)
+        {
+            var curhwnd = new Windows.Win32.Foundation.HWND(WinRT.Interop.WindowNative.GetWindowHandle(this).ToInt32());
+            if (curhwnd != hwnd)
+                return;
 
-            var success = Windows.Win32.PInvoke.RegisterHotKey(hwnd, 0, Windows.Win32.UI.Input.KeyboardAndMouse.HOT_KEY_MODIFIERS.MOD_WIN | Windows.Win32.UI.Input.KeyboardAndMouse.HOT_KEY_MODIFIERS.MOD_CONTROL, OemPeriod);
-
-            var hotKeyPrcPointer = Marshal.GetFunctionPointerForDelegate(hotKeyPrc);
-            origPrc = Marshal.GetDelegateForFunctionPointer<Windows.Win32.UI.WindowsAndMessaging.WNDPROC>((IntPtr)Windows.Win32.PInvoke.SetWindowLongPtr(hwnd, Windows.Win32.UI.WindowsAndMessaging.WINDOW_LONG_PTR_INDEX.GWL_WNDPROC, hotKeyPrcPointer));
+            if (PInvoke.GetActiveWindow() == hwnd)
+            {
+                if (IsCurrentlyInputtingText())
+                {
+                    CountText.Text = $"Entering text...{++m_count}";
+                }
+                else
+                {
+                    CountText.Text = $"Hot key pressed: {++m_count}";
+                }
+            }
         }
 
         private int m_count = 0;
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            Window newWin = new MainWindow();
+            newWin.Activate();
+        }
     }
 }

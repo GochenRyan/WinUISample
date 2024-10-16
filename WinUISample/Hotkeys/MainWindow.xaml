@@ -8,7 +8,14 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
-        <TextBlock x:Name="CountText"/>
+    <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
+        <TextBox/>
+        <RichEditBox/>
+        <PasswordBox/>
+        <AutoSuggestBox/>
+        <NumberBox/>
+        <TextBlock x:Name="CountText" Text="..."/>
+
+        <Button Content="Create new window" Click="Button_Click"/>
     </StackPanel>
 </Window>
