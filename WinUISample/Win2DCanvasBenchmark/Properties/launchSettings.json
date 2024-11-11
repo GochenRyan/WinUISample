@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "Win2DCanvasBenchmark (Package)": {
+      "commandName": "MsixPackage"
+    },
+    "Win2DCanvasBenchmark (Unpackaged)": {
+      "commandName": "Project"
+    }
+  }
+}

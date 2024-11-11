@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "WinUICanvasBenchmark (Package)": {
+      "commandName": "MsixPackage"
+    },
+    "WinUICanvasBenchmark (Unpackaged)": {
+      "commandName": "Project"
+    }
+  }
+}
