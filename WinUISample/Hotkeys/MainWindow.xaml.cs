@@ -1,8 +1,7 @@
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
 using Microsoft.UI.Xaml.Input;
-using System;
-using System.Runtime.InteropServices;
+using System.Collections.Generic;
 using Windows.Win32;
 
 // To learn more about WinUI, the WinUI project structure,
@@ -35,31 +34,48 @@ namespace Hotkeys
             return false;
         }
 
-        public MainWindow()
+        public MainWindow(bool IsMain = true)
         {
             this.InitializeComponent();
-            var hm = GlobalHotkeyManager.Instance;
-            hm.OnHotkeyPressed += Hm_OnHotkeyPressed;
-            hm.RegisterWindow(this);
-            hm.RegisterHotkey(this, 1, Windows.Win32.UI.Input.KeyboardAndMouse.HOT_KEY_MODIFIERS.MOD_WIN | Windows.Win32.UI.Input.KeyboardAndMouse.HOT_KEY_MODIFIERS.MOD_CONTROL, OemPeriod);
+            
+            if (IsMain)
+            {
+                GlobalHotkeyManager.Instance.OnHotkeyPressed += Hm_OnHotkeyPressed;
+                GlobalHotkeyManager.Instance.RegisterWindow(this);
+                GlobalHotkeyManager.Instance.RegisterHotkey(this, 1, Windows.Win32.UI.Input.KeyboardAndMouse.HOT_KEY_MODIFIERS.MOD_WIN | Windows.Win32.UI.Input.KeyboardAndMouse.HOT_KEY_MODIFIERS.MOD_CONTROL, OemPeriod);
+            }
         }
 
         private void Hm_OnHotkeyPressed(Windows.Win32.Foundation.HWND hwnd, uint uMsg, Windows.Win32.Foundation.WPARAM wParam, Windows.Win32.Foundation.LPARAM lParam)
         {
+            var activeWindow = PInvoke.GetActiveWindow();
             var curhwnd = new Windows.Win32.Foundation.HWND(WinRT.Interop.WindowNative.GetWindowHandle(this).ToInt32());
-            if (curhwnd != hwnd)
-                return;
-
-            if (PInvoke.GetActiveWindow() == hwnd)
+            if (curhwnd == activeWindow)
             {
-                if (IsCurrentlyInputtingText())
+                UpdateText();
+            }
+            else
+            {
+                foreach (var window in m_otherWindows)
                 {
-                    CountText.Text = $"Entering text...{++m_count}";
+                    Windows.Win32.Foundation.HWND otherhwnd = new Windows.Win32.Foundation.HWND(WinRT.Interop.WindowNative.GetWindowHandle(window).ToInt32());
+                    if (activeWindow == otherhwnd)
+                    {
+                        window.UpdateText();
+                    }
                 }
-                else
-                {
-                    CountText.Text = $"Hot key pressed: {++m_count}";
-                }
+            }
+        }
+
+        private void UpdateText()
+        {
+            if (IsCurrentlyInputtingText())
+            {
+                CountText.Text = $"Entering text...{++m_count}";
+            }
+            else
+            {
+                CountText.Text = $"Hot key pressed: {++m_count}";
             }
         }
 
@@ -67,8 +83,21 @@ namespace Hotkeys
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            Window newWin = new MainWindow();
+            var newWin = new MainWindow(false);
             newWin.Activate();
+
+            m_otherWindows.Add(newWin);
+            newWin.Closed += NewWin_Closed;
         }
+
+        private void NewWin_Closed(object sender, WindowEventArgs args)
+        {
+            var window = sender as MainWindow;
+            m_otherWindows.Remove(window);
+        }
+
+        HashSet<MainWindow> m_otherWindows = new();
+
+        bool IsMain = true;
     }
 }
